@@ -1,0 +1,2 @@
+hover:image_pipeline/camera_calibration:image_pipeline/depth_image_proc:image_pipeline/image_pipeline:image_pipeline/image_proc:image_pipeline/image_publisher:image_pipeline/image_rotate:image_pipeline/image_view:image_pipeline/stereo_image_proc:octomap_mapping/octomap_mapping:octomap_mapping/octomap_server
+-DCATKIN_DEVEL_PREFIX=/home/saksham/iris_quad/devel -DCMAKE_INSTALL_PREFIX=/home/saksham/iris_quad/install -G Unix Makefiles

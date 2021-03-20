@@ -1,0 +1,8 @@
+prefix=/home/saksham/iris_quad/devel
+
+Name: toff
+Description: Description of toff
+Version: 0.0.0
+Cflags: -I/home/saksham/iris_quad/src/toff/include
+Libs: -L${prefix}/lib -ltoff
+Requires: geometry_msgs mavros_msgs roscpp rospy std_msgs
