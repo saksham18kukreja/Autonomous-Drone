@@ -15,6 +15,7 @@ import math
 import random
 import time
 from sklearn.neighbors import KDTree
+from Extra import extra
 
 #defining the node
 class Node(object):
@@ -41,6 +42,8 @@ class RRT(object):
         self.obstacle_tree = obstacle
         #self.body = self.aicraft_points()
         self.drone_len = 0.3
+        self.smooth = extra()
+        self.smooth_path = []
 
     #distance function
     def getDistance(self,p1,p2):
@@ -82,8 +85,10 @@ class RRT(object):
         #path_new =[]
         while (self.path[-1].parent != None):
             self.path.append(self.path[-1].parent)
-        #self.optimal = self.getOptimal(self.path)    
-        return self.path[::-1]
+            
+        self.smooth_path = self.generate_bezier(self.path[::-1])
+        return self.smooth_path, self.path[::-1]
+        #return self.path[::-1]
         #return self.optimal
 
     #check the equivalence of two points:
@@ -155,6 +160,18 @@ class RRT(object):
                     del optimal[pick1+1:pick2]
         return optimal
 
+    def generate_bezier(self,path):
+        bezier_curve = []
+        # for i in range(len(path)):
+        #     points.append([path[i].x,path[i].y,path[i].z])
+        points = [[path[i].x,path[i].y,path[i].z]for i in range(len(path))]
+        path_smooth = self.smooth.evaluate_bezier(np.array(points))
+        
+        for i in range(len(path_smooth)):
+            bezier_curve.append(Node(path_smooth[i][0], path_smooth[i][1], path_smooth[i][2],))
+        
+        return bezier_curve
+
 
 
     # Main function calling the other functions    
@@ -213,8 +230,4 @@ if __name__ == "__main__":
     path = obs.main()
     print(path)
     print(t2-t1)
-    #obs.path_plot(path)
-
-
-
-        
+    #obs.path_plot(path)   
