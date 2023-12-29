@@ -20,7 +20,7 @@ In the video, the drone detects the obstacle visualized by the point cloud(top l
 It generates a new path around the obstacle seen at the bottom left
 
 ## Optimization
-![video](https://github.com/saksham18kukreja/Autonomous-Drone/blob/master/media/path_smoothing_bezier.gif)
+![video](https://github.com/saksham18kukreja/Autonomous-Drone/blob/master/media/path_smoothing_bezier.gif)<br>
 The jagged path of RRT was smoothen as a post-processing step using bezier curves
 
 ## Tools used
