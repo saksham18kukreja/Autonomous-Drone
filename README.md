@@ -9,3 +9,7 @@ How the code works
 
 The path generation takes place using RRT in less than 1 second.
 
+## Work Pending 
+1. Convert the code to CPP for faster detection and path generation
+2. Rigourous testing on hardware to improve the pipeline
+3. Use voxel grids to reduce the computation load.
