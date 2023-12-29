@@ -16,11 +16,12 @@ The path generation takes place using RRT in less than 1 second.
 
 ![video](https://github.com/saksham18kukreja/Autonomous-Drone/blob/master/obstacle_avoidance_drone.gif)
 
-In the video, the drone detects the obstacle visualized by the point cloud(top left)
+In the video, the drone detects the obstacle visualized by the point cloud(top left)<br>
 It generates a new path around the obstacle seen at the bottom left
 
 ## Optimization
-![video](https://github.com/saksham18kukreja/Autonomous-Drone/blob/master/media/path_smoothing_bezier.gif)<br>
+![video](https://github.com/saksham18kukreja/Autonomous-Drone/blob/master/media/path_smoothing_bezier.gif)
+
 The jagged path of RRT was smoothen as a post-processing step using bezier curves
 
 ## Tools used
